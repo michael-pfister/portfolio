@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import { motion } from "framer-motion"
+import AdvantageWidget from '../components/AdvantageWidget'
 
 
 const Hero = () => {
@@ -27,10 +28,27 @@ const Hero = () => {
   </section>
 }
 
+const MyAdvantages = () => {
+  return <section className='flex justify-evenly'>
+    <motion.div className='w-[500px] aspect-[1233/929] hidden lg:inline-block relative' initial={{x:-10}} animate={{x: 20}} transition={{repeat: Infinity, repeatType:"reverse", ease:"linear", duration: 2}}>
+      <Image src='/Rocket Boy.svg' alt='Rocket' layout='fill' />
+    </motion.div>
+    <div className='flex flex-col gap-8 items-center' data-aos="fade-left">
+      <h1 className='text-5xl'>My Advantage</h1>
+    <div className='flex flex-wrap justify-center items-center gap-4'>
+      <AdvantageWidget imageSource='/programming_experience.svg' heading='Programming Experience' description='Over 6 years of programming experience.' />
+      <AdvantageWidget imageSource='/Team_Lineal-coloured.svg' heading='Active Team Player' description='Collaboration in open source projects.' />
+      <AdvantageWidget imageSource='/Online Learning_Flat.svg' heading='Super Fast Learner' description='Highly adaptive to new technologies.' />
+    </div>
+    </div>
+  </section>
+}
+
 const Home: NextPage = () => {
   return (
     <>
       <Hero />
+      <MyAdvantages />
     </>
   )
 }
