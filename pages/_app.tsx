@@ -12,8 +12,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     AOS.init({
       easing: "ease-out-cubic",
-      once: true,
-      offset: 50,
+      once: false,
+      mirror: true,
+      offset: 50
     });
   }, []);
   return <>
@@ -22,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="description" content="Michael Pfister Web Developer Portfolio" />
         <link rel="icon" href="/favicon.ico" />
     </Head>
-    <main className=''>
+    <main className='overflow-hidden'>
       <Component {...pageProps} />
     </main>
   </>
