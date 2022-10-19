@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 import { motion } from "framer-motion"
 import AdvantageWidget from '../components/AdvantageWidget'
+import GithubRespositoryWidget, { Seperator } from '../components/GithubRespositoryWidget'
 
 
 const Hero = () => {
@@ -44,20 +45,67 @@ const MyAdvantages = () => {
   </section>
 }
 
-const LatestProjects = () => {
-  return <section className='my-16 p-4'>
-    <h1 className='text-3xl'>Latest Projects</h1>
+const LatestProjects = ({githubRepositories}: {githubRepositories: GithubRepository[]}) => {
+  return <section className='my-16 bg-[#2a2a2a]'>
+    <div className="w-full h-16 sm:h-28 md:h-36 lg:h-52 xl:h-64 bg-[url('/layered-waves-haikei.svg')] bg-cover bg-bottom" aria-hidden="true" />
+    <div className='flex justify-evenly items-center'>
+      <div>
+        <h1 className='text-3xl p-4'>Latest Projects</h1>
+        <div className='p-4'>
+          <Seperator />
+          {githubRepositories.map((githubRepository, index) => <div key={`github_repository_${index}`}><GithubRespositoryWidget githubRepository={githubRepository} /><Seperator /></div>)}
+        </div>
+      </div>
+      <div className='relative w-[500px] xl:w-[800px] aspect-[406/306] hidden md:inline-block'>
+        <Image src='/World wide web_Flatline.svg' alt='A globe representing the world wide web' layout='fill' />
+      </div>
+    </div>
+    <div className="w-full h-16 sm:h-28 md:h-36 lg:h-52 xl:h-64 bg-[url('/layered-waves-haikei.svg')] bg-cover bg-bottom rotate-180" aria-hidden="true" />
   </section>
 }
 
-const Home: NextPage = () => {
+export type GithubRepository = {node: {name: string, description: string, url: string}}
+
+type PageProps = {
+  githubRepositories: GithubRepository[] | null, 
+}
+
+const Home: NextPage<PageProps> = ({githubRepositories}) => {
   return (
     <>
       <Hero />
       <MyAdvantages />
-      <LatestProjects />
+      {githubRepositories && <LatestProjects githubRepositories={githubRepositories}/>}
     </>
   )
 }
 
-export default Home
+export const getServerSideProps = async () => {
+  require('dotenv').config();
+
+  const githubRepositories = await (await fetch('https://api.github.com/graphql', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json',
+    'Accept': 'application/json',
+    'Authorization': `token ${process.env.GITHUB_AUTH}` },
+    body: JSON.stringify({ query: `{
+      user(login: "michael-pfister") {
+        repositories(first: 5, orderBy: {field: CREATED_AT, direction: DESC}) {
+          edges {
+            node {
+              name
+              description
+              url
+            }
+          }
+        }
+      }
+    }` }),
+  })).json();
+
+  return {
+    props: {githubRepositories: githubRepositories.data ? githubRepositories.data.user.repositories.edges : null}
+  }
+}
+
+export default Home;
