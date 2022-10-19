@@ -7,6 +7,7 @@ import GithubRespositoryWidget, {
 } from "../components/GithubRespositoryWidget";
 import { Client } from "twitter-api-sdk";
 import { Tweet } from 'react-twitter-widgets';
+import { useState } from "react";
 
 export type GithubRepository = {
   node: { name: string; description: string; url: string };
@@ -148,18 +149,36 @@ const TwitterFeed = ({ tweets }: { tweets: TwitterTweet[] }) => {
   </section>
 }
 
-
+const ContactMe = () => {
+  return <section className="my-16 lg:mt-40 p-4 flex justify-center items-center flex-col sm:flex-row gap-4">
+    <div className="flex flex-col items-center" data-aos="fade-right">
+      <h1 className="text-3xl mb-4">Contact Me</h1>
+      <div className="relative w-64 md:w-96 lg:w-[500px] aspect-[406/306] hidden sm:inline-block">
+        <Image src="/Sending emails_Flatline.svg" alt="Contact me" layout="fill" />
+      </div>
+    </div>
+    <form className="flex flex-col gap-4 w-64 md:w-[500px]" data-aos="fade-left" action="https://formsubmit.co/8b0ed63f53eab46acdfa37976cb768dc" method="POST">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required />
+      <div className="flex justify-center">
+        <button className="bg-[#000] w-2/3" type="submit">Send</button>
+      </div>
+    </form>
+  </section>
+};
 
 const Home: NextPage<PageProps> = ({ githubRepositories, twitterTweets }) => {
-  console.log(twitterTweets);
   return (
     <>
       <Hero />
       <MyAdvantages />
       {githubRepositories && <LatestProjects githubRepositories={githubRepositories} />}
       {twitterTweets && <TwitterFeed tweets={twitterTweets} />}
+      <ContactMe />
     </>
   );
+
 };
 
 export const getServerSideProps = async () => {
