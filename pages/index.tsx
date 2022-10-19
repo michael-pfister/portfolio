@@ -143,7 +143,7 @@ const TwitterFeed = ({ tweets }: { tweets: TwitterTweet[] }) => {
   return <section className="my-8 px-4">
     <h1 className="text-4xl w-full text-center mb-8">Tweets</h1>
     <div className="flex flex-wrap gap-x-5 justify-center items-center">
-      {tweets.map(({id}, index)=><div key={`twitter_tweet_${id}`} className={`${index && 'hidden md:inline-block'}`}><Tweet tweetId={id} options={{ width: "300" }} /></div>)}
+      {tweets.map(({id}, index)=><div key={`twitter_tweet_${id}`} className={`${index && 'hidden sm:inline-block'}`} data-aos="flip-left"><Tweet tweetId={id} options={{ width: "300" }} /></div>)}
     </div>
   </section>
 }
