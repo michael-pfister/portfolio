@@ -76,22 +76,22 @@ function MyApp({ Component, pageProps }: AppProps) {
   return <>
     <Head>
         <title>Michael Pfister - Professional Web Developer</title>
-        <meta name="description" content="Michael Pfister Web Developer Portfolio" />
+        <meta name="title" content="Michael Pfister - Professional Web Developer" />
         <link rel="icon" href="/favicon.ico" />
 
-        {/*The Open Graph protocol*/}
-        <meta property="og:title" content="Michael Pfister" />
+        {/* Open Graph */}
         <meta property="og:type" content="website" />
-        <meta property="og:description" content="Michael Pfister's web developer portfolio." />
         <meta property="og:url" content="https://michael-pfister.vercel.app/" />
+        <meta property="og:title" content="Michael Pfister - Professional Web Developer" />
+        <meta property="og:description" content="Michael Pfister Web Developer Portfolio" />
         <meta property="og:image" content="https://michael-pfister.vercel.app/ogImage.webp" />
 
         {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Michael Pfister" />
-        <meta name="twitter:description" content="Michael Pfister's web developer portfolio." />
-        <meta name="twitter:image" content="https://michael-pfister.vercel.app/ogImage.webp" />
-        <meta property="twitter:creator" content="@ScaredToCompile" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://michael-pfister.vercel.app/" />
+        <meta property="twitter:title" content="Michael Pfister - Professional Web Developer" />
+        <meta property="twitter:description" content="Michael Pfister Web Developer Portfolio" />
+        <meta property="twitter:image" content="https://michael-pfister.vercel.app/ogImage.webp" />
     </Head>
     <AppBar />
     <main className='overflow-hidden'>
