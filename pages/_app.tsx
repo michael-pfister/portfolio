@@ -87,10 +87,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:image" content="https://michael-pfister.vercel.app/ogImage.webp" />
 
         {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Michael Pfister" />
         <meta name="twitter:description" content="Michael Pfister's web developer portfolio." />
         <meta name="twitter:image" content="https://michael-pfister.vercel.app/ogImage.webp" />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:creator" content="@ScaredToCompile" />
     </Head>
     <AppBar />
     <main className='overflow-hidden'>
