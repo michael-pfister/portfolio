@@ -38,13 +38,13 @@ const AppBar = () => {
     </nav>
     
     {/* mobile */}
-    <nav className='lg:hidden fixed z-10 w-screen h-screen top-0 bottom-0'>
-      <button className='absolute right-4 z-20 bg-[rgba(0,0,0,0)] cursor-pointer' onClick={()=>setMobileOpen(!mobileOpen)} aria-label="open mobile navigation">
+    <nav className='lg:hidden'>
+      <button className='fixed top-0 right-0 z-20 bg-[rgba(0,0,0,0)] cursor-pointer' onClick={()=>setMobileOpen(!mobileOpen)} aria-label="open mobile navigation">
         <motion.div className='relative w-8 h-8' animate={{rotate: mobileOpen ? -90 : 0}}>
           <Image src='/navigation-svgrepo-com.svg' alt='menu icon' layout='fill' />
         </motion.div>
       </button>
-      <motion.div className='absolute w-4/5 sm:w-3/5 md:w-2/5 h-screen bg-black border-l-2 border-[#000] p-4' animate={{right: mobileOpen ? 0 : '-100%'}} onClick={()=>setMobileOpen(!mobileOpen)} >
+      <motion.div className='fixed top-0 right-0 z-10 w-4/5 sm:w-3/5 md:w-2/5 h-screen bg-black border-l-2 border-[#000] p-4' animate={{right: mobileOpen ? 0 : '-100%'}} onClick={()=>setMobileOpen(!mobileOpen)} >
         <NavigationLinks />
       </motion.div>
     </nav>
