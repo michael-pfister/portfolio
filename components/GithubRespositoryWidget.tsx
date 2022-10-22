@@ -18,7 +18,7 @@ const GithubRespositoryWidget = ({
         <div className="flex gap-2 px-2 items-center">
           <div className="relative w-6 h-6">
             <Image
-              className="rounded-full"
+              className="invert"
               src="/github-svgrepo-com.svg"
               alt="github logo"
               layout="fill"

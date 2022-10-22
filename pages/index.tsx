@@ -46,7 +46,7 @@ const Hero = () => {
           </text>
         </h1>
       </motion.div>
-      <div className="w-[400px] md:w-[800px] aspect-[2692/2284] relative">
+      <div className="w-[400px] md:w-[800px] aspect-[1.21] relative">
         <Image
           src="/hero.webp"
           alt="Michael Pfister working on a laptop"
@@ -106,7 +106,7 @@ const LatestProjects = ({
   githubRepositories: GithubRepository[];
 }) => {
   return (
-    <section className="my-16 bg-[#2a2a2a]">
+    <section className="my-16 bg-[#2a2a2a]" id="projects">
       <div
         className="w-full h-16 sm:h-28 md:h-36 lg:h-52 xl:h-64 bg-[url('/layered-waves-haikei.svg')] bg-cover bg-bottom"
         aria-hidden="true"
@@ -141,30 +141,33 @@ const LatestProjects = ({
 };
 
 const TwitterFeed = ({ tweets }: { tweets: TwitterTweet[] }) => {
-  return <section className="my-8 px-4">
+  return <section className="my-8 px-4" id='twitter_feed'>
     <h1 className="text-4xl w-full text-center mb-8">Tweets</h1>
     <div className="flex flex-wrap gap-x-5 justify-center items-center">
-      {tweets.map(({id}, index)=><div key={`twitter_tweet_${id}`} className={`${index && 'hidden sm:inline-block'}`} data-aos="flip-left"><Tweet tweetId={id} options={{ width: "300" }} /></div>)}
+      {tweets.map(({id}, index)=><div key={`twitter_tweet_${id}`} className={`${index>1 && 'hidden sm:inline-block'}`} data-aos="flip-left"><Tweet tweetId={id} options={{ width: "300" }} /></div>)}
     </div>
   </section>
 }
 
 const ContactMe = () => {
-  return <section className="my-16 lg:mt-40 p-4 flex justify-center items-center flex-col sm:flex-row gap-4">
-    <div className="flex flex-col items-center" data-aos="fade-right">
-      <h1 className="text-3xl mb-4">Contact Me</h1>
-      <div className="relative w-64 md:w-96 lg:w-[500px] aspect-[406/306] hidden sm:inline-block">
-        <Image src="/Sending emails_Flatline.svg" alt="Contact me" layout="fill" />
+  return <section className=" bg-orange" id="contact_me">
+    <div className="w-full h-16 sm:h-28 md:h-36 lg:h-52 xl:h-72 bg-[url('/wave-haikei.svg')] bg-cover bg-bottom" aria-hidden="true"/>
+    <div className="p-4 flex justify-center items-center flex-col sm:flex-row gap-4">
+      <div className="flex flex-col items-center" data-aos="fade-right">
+        <h1 className="text-3xl mb-4">Contact Me</h1>
+        <div className="relative w-64 md:w-96 lg:w-[500px] aspect-[406/306] hidden sm:inline-block">
+          <Image src="/Sending emails_Flatline.svg" alt="Contact me" layout="fill" />
+        </div>
       </div>
+      <form className="flex flex-col gap-4 w-64 md:w-[500px]" data-aos="fade-left" action="https://formsubmit.co/8b0ed63f53eab46acdfa37976cb768dc" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" required />
+        <div className="flex justify-center">
+          <button className="bg-[#000] w-2/3" type="submit">Send</button>
+        </div>
+      </form>
     </div>
-    <form className="flex flex-col gap-4 w-64 md:w-[500px]" data-aos="fade-left" action="https://formsubmit.co/8b0ed63f53eab46acdfa37976cb768dc" method="POST">
-      <input type="text" name="name" placeholder="Full Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" required />
-      <div className="flex justify-center">
-        <button className="bg-[#000] w-2/3" type="submit">Send</button>
-      </div>
-    </form>
   </section>
 };
 
