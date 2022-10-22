@@ -83,13 +83,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:title" content="Michael Pfister" />
         <meta property="og:type" content="website" />
         <meta property="og:description" content="Michael Pfister's web developer portfolio." />
-        <meta property="og:url" content="https://portfolio-xi-black.vercel.app/" />
-        <meta property="og:image" content="https://portfolio-xi-black.vercel.app/ogImage.webp" />
+        <meta property="og:url" content="https://michael-pfister.vercel.app/" />
+        <meta property="og:image" content="https://michael-pfister.vercel.app/ogImage.webp" />
 
         {/* Twitter */}
         <meta name="twitter:title" content="Michael Pfister" />
         <meta name="twitter:description" content="Michael Pfister's web developer portfolio." />
-        <meta name="twitter:image" content="https://portfolio-xi-black.vercel.app/ogImage.webp" />
+        <meta name="twitter:image" content="https://michael-pfister.vercel.app/ogImage.webp" />
         <meta name="twitter:card" content="summary_large_image" />
     </Head>
     <AppBar />
