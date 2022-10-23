@@ -13,6 +13,7 @@ import { MotionConfig } from 'framer-motion';
 
 const NavigationLinks = () => {
   return <ul className='flex flex-col lg:flex-row gap-x-16 gap-y-4 text-2xl lg:text-xl'>
+  <li><Link href='/#my_advantage' scroll={false}>My Advantage</Link></li>
   <li><Link href='/#projects' scroll={false}>Projects</Link></li>
   <li><Link href='/#twitter_feed' scroll={false}>Tweets</Link></li>
   <li><Link href='/#contact_me' scroll={false}>Contact Me</Link></li>
@@ -61,6 +62,7 @@ const Footer = () => {
   return <footer className='p-4 pt-12 flex justify-center gap-4 bg-orange'>
     <LinkIcon imgSrc='/github-svgrepo-com.svg' imgAlt='Github Icon' href='https://github.com/michael-pfister' ariaLabel='Github' />
     <LinkIcon imgSrc='/twitter-svgrepo-com.svg' imgAlt='Twitter Icon' href='https://twitter.com/ScaredToCompile' ariaLabel='Twitter' />
+    <LinkIcon imgSrc='/linkedin-svgrepo-com.svg' imgAlt='LinkedIn Icon' href='https://www.linkedin.com/in/michael-pascal-pfister/' ariaLabel='LinkedIn' />
   </footer>
 }
 

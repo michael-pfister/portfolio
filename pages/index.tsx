@@ -59,7 +59,7 @@ const Hero = () => {
 
 const MyAdvantages = () => {
   return (
-    <section className="flex justify-evenly my-16">
+    <section className="flex justify-evenly my-16" id="my_advantage">
       <motion.div
         className="w-[500px] aspect-[1233/929] hidden lg:inline-block relative"
         initial={{ x: -10 }}
