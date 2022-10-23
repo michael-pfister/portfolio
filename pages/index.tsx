@@ -74,7 +74,7 @@ const MyAdvantages = () => {
         <Image src="/Rocket Boy.svg" alt="Rocket" layout="fill" />
       </motion.div>
       <div className="flex flex-col gap-8 items-center">
-        <h1 className="text-3xl">My Advantage</h1>
+        <h1 className="text-3xl">My <text className="text-orange">Advantage</text></h1>
         <div className="flex flex-wrap justify-center items-center gap-4">
           <AdvantageWidget
             imageSource="/programming_experience.svg"
@@ -113,7 +113,7 @@ const LatestProjects = ({
       />
       <div className="flex justify-evenly items-center">
         <div>
-          <h1 className="text-3xl p-4">Latest Projects</h1>
+          <h1 className="text-3xl p-4">Latest <text className="text-blue">Projects</text></h1>
           <div className="p-4">
             <Seperator />
             {githubRepositories.map((githubRepository, index) => (
@@ -142,7 +142,7 @@ const LatestProjects = ({
 
 const TwitterFeed = ({ tweets }: { tweets: TwitterTweet[] }) => {
   return <section className="my-8 px-4" id='twitter_feed'>
-    <h1 className="text-4xl w-full text-center mb-8">Tweets</h1>
+    <h1 className="text-4xl w-full text-center mb-8">Recent <text className="text-[#1d9bf0]">Tweets</text></h1>
     <div className="flex flex-wrap gap-x-5 justify-center items-center">
       {tweets.map(({id}, index)=><div key={`twitter_tweet_${id}`} className={`${index>1 && 'hidden sm:inline-block'}`} data-aos="flip-left"><Tweet tweetId={id} options={{ width: "300" }} /></div>)}
     </div>
@@ -154,7 +154,7 @@ const ContactMe = () => {
     <div className="w-full h-16 sm:h-28 md:h-36 lg:h-52 xl:h-72 bg-[url('/wave-haikei.svg')] bg-cover bg-bottom" aria-hidden="true"/>
     <div className="p-4 flex justify-center items-center flex-col sm:flex-row gap-4">
       <div className="flex flex-col items-center" data-aos="fade-right">
-        <h1 className="text-3xl mb-4">Contact Me</h1>
+        <h1 className="text-3xl text-[#000] mb-4">Contact Me</h1>
         <div className="relative w-64 md:w-96 lg:w-[500px] aspect-[406/306] hidden sm:inline-block">
           <Image src="/Sending emails_Flatline.svg" alt="Contact me" layout="fill" />
         </div>
