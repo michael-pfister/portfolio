@@ -77,24 +77,26 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, []);
   return <>
     <Head>
-        <title>Michael Pfister - Professional Web Developer</title>
-        <meta name="title" content="Michael Pfister - Professional Web Developer" />
+        <title>Michael Pfister | Professional Web Developer</title>
+        <meta name="title" content="Michael Pfister | Professional Web Developer" />
         <meta name="description" content="Michael Pfister's personal portfolio page, primarily used for business." />
+        <meta name="author" content="Michael Pfister" />
         <link rel="icon" href="/favicon.ico" />
 
         {/* Open Graph */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://michael-pfister.vercel.app/" />
-        <meta property="og:title" content="Michael Pfister - Professional Web Developer" />
+        <meta property="og:site_name" content="michael-pfister.vercel.app" />
+        <meta property="og:site" content="https://michael-pfister.vercel.app/" />
+        <meta property="og:title" content="Michael Pfister | Professional Web Developer" />
         <meta property="og:description" content="Michael Pfister's personal portfolio page, primarily used for business." />
         <meta property="og:image" content="http://raw.githubusercontent.com/michael-pfister/portfolio/main/public/ogImage.webp" />
+        <meta property="og:url" content="https://michael-pfister.vercel.app/" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://michael-pfister.vercel.app/" />
-        <meta property="twitter:title" content="Michael Pfister - Professional Web Developer" />
-        <meta property="twitter:description" content="Michael Pfister's personal portfolio page, primarily used for business." />
+        <meta property="twitter:title" content="Michael Pfister | Professional Web Developer" />
         <meta property="twitter:image" content="http://raw.githubusercontent.com/michael-pfister/portfolio/main/public/ogImage.webp" />
+        <meta property="twitter:description" content="Michael Pfister's personal portfolio page, primarily used for business." />
+        <meta property="twitter:creator" content="@ScaredToCompile"/>
     </Head>
     <AppBar />
     <main className='overflow-hidden'>
