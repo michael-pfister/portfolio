@@ -144,7 +144,7 @@ const TwitterFeed = ({ tweets }: { tweets: TwitterTweet[] }) => {
   return <section className="my-8 px-4" id='twitter_feed'>
     <h1 className="text-4xl w-full text-center mb-8">Recent <text className="text-[#1d9bf0]">Tweets</text></h1>
     <div className="flex flex-wrap gap-x-5 justify-center items-center">
-      {tweets.map(({id}, index)=><div key={`twitter_tweet_${id}`} className={`${index>1 && 'hidden sm:inline-block'}`} data-aos="fade-up"><Tweet tweetId={id} options={{ width: "300" }} /></div>)}
+      {tweets.map(({id}, index)=><div key={`twitter_tweet_${id}`} className={`${index>1 && 'hidden sm:inline-block'}`} data-aos="fade-up" data-cy="twitter tweet"><Tweet tweetId={id} options={{ width: "300" }} /></div>)}
     </div>
   </section>
 }
@@ -159,12 +159,12 @@ const ContactMe = () => {
           <Image src="/Sending emails_Flatline.svg" alt="Contact me" layout="fill" />
         </div>
       </div>
-      <form className="flex flex-col gap-4 w-64 md:w-[500px]" data-aos="fade-left" action="https://formsubmit.co/8b0ed63f53eab46acdfa37976cb768dc" method="POST">
-        <input type="text" name="name" placeholder="Full Name" required />
-        <input type="email" name="email" placeholder="Your Email" required />
-        <textarea name="message" placeholder="Your Message" required />
+      <form className="flex flex-col gap-4 w-64 md:w-[500px]" data-aos="fade-left" data-cy="contact form" action="https://formsubmit.co/8b0ed63f53eab46acdfa37976cb768dc" method="POST">
+        <input type="text" name="name" placeholder="Full Name" data-cy="contact form name" required />
+        <input type="email" name="email" placeholder="Your Email" data-cy="contact form email" required />
+        <textarea name="message" placeholder="Your Message" data-cy="contact form message" required />
         <div className="flex justify-center">
-          <button className="bg-[#000] w-2/3" type="submit">Send</button>
+          <button className="bg-[#000] w-2/3" type="submit" data-cy="contact form submit button">Send</button>
         </div>
       </form>
     </div>

@@ -13,7 +13,7 @@ import { MotionConfig } from "framer-motion";
 
 const NavigationLinks = () => {
   return (
-    <ul className="flex flex-col lg:flex-row gap-x-16 gap-y-4 text-2xl lg:text-xl">
+    <ul className="flex flex-col lg:flex-row gap-x-16 gap-y-4 text-2xl lg:text-xl" data-cy="navigation point list">
       <li>
         <Link href="/#my_advantage" scroll={false}>
           My Advantage
@@ -67,7 +67,7 @@ const AppBar = () => {
       </nav>
 
       {/* mobile */}
-      <nav className="lg:hidden">
+      <nav className="lg:hidden" data-cy="mobile navigation">
         <button
           className="fixed top-0 right-0 z-20 bg-[rgba(0,0,0,0)] cursor-pointer"
           onClick={() => setMobileOpen(!mobileOpen)}

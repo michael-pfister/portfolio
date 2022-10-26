@@ -13,7 +13,7 @@ const GithubRespositoryWidget = ({
   githubRepository: GithubRepository;
 }) => {
   return (
-    <div data-aos="fade-right">
+    <div data-aos="fade-right" data-cy='github repository'>
       <a className="cursor-pointer" href={url} target="_blank" rel="noreferrer">
         <div className="flex gap-2 px-2 items-center">
           <div className="relative w-6 h-6">
