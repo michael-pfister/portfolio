@@ -193,7 +193,7 @@ export const getServerSideProps = async () => {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Authorization: `token ${process.env.GITHUB_AUTH}`,
+        Authorization: `token ${process.env.REPOSITORIES_GITHUB_AUTH}`,
       },
       body: JSON.stringify({
         query: `{
