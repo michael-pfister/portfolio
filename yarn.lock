@@ -2941,10 +2941,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.npmjs.org/tweetnacl/-/tweetnacl-0.14.5.tgz"
   integrity sha512-KXXFFdAbFXY4geFIwoyNK+f5Z1b7swfXABfL7HXCmoIWMKU3dmS26672A4EeQtDzLKy7SXmfBu51JolvEKwtGA==
 
-twitter-api-sdk@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/twitter-api-sdk/-/twitter-api-sdk-1.2.0.tgz#595ea699a7b91997548b42e63fe6ca133ade0009"
-  integrity sha512-D9s+9JYSyJNvylNdMOJTjZ5wPj7erQrjXTOo7y0OTWL1rKFe4yWh7gxorcxe3VJV42tihp1YrFRmk8Tovw+T7w==
+twitter-api-sdk@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/twitter-api-sdk/-/twitter-api-sdk-1.2.1.tgz#53ac3f13cdccfdf06ad71fbc7c24a0184cb9bb15"
+  integrity sha512-tNQ6DGYucFk94JlnUMsHCkHg5o1wnCdHh71Y2ukygNVssOdD1gNVjOpaojJrdwbEAhoZvcWdGHerCa55F8HKxQ==
   dependencies:
     abort-controller "^3.0.0"
     node-fetch "^2.6.1"
