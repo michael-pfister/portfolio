@@ -16,7 +16,7 @@ const NavigationLinks = () => {
     <ul className="flex flex-col lg:flex-row gap-x-16 gap-y-4 text-2xl lg:text-xl" data-cy="navigation point list">
       <li>
         <Link href="/#my_advantage" scroll={false}>
-          My Advantage
+          Qualities
         </Link>
       </li>
       <li>
