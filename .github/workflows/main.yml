@@ -1,6 +1,10 @@
 name: E2E on Chrome
 
-on: [push]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   cypress:
@@ -9,6 +13,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.1.0
       - name: Cypress run
+        env:
+          REPOSITORIES_GITHUB_AUTH: ${{secrets.REPOSITORIES_GITHUB_AUTH}}
+          TWITTER_BEARER_TOKEN: ${{secrets.TWITTER_BEARER_TOKEN}}
         uses: cypress-io/github-action@v4.2.0
         with:
           browser: chrome
