@@ -19,7 +19,7 @@
     "twitter-api-sdk": "^1.2.0"
   },
   "devDependencies": {
-    "@types/node": "18.11.8",
+    "@types/node": "18.11.19",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.8",
     "autoprefixer": "^10.4.13",
