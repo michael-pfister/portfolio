@@ -26,9 +26,9 @@ type PageProps = {
 
 const Hero = () => {
   return (
-    <section className='flex flex-col md:items-center mb-16 pt-24 bg-[url("/low-poly-grid.svg")] bg-cover bg-no-repeat md:flex-row items-end'>
+    <section className='flex flex-col md:items-left mb-16 pt-24 bg-[url("/low-poly-grid.svg")] bg-cover bg-no-repeat md:flex-row items-end'>
       <motion.div
-        className="w-full flex justify-center p-4"
+        className="w-full flex p-10 md:p-20"
         initial={{ scale: 0, rotate: 180 }}
         animate={{ rotate: 360, scale: 1 }}
         transition={{
@@ -46,13 +46,6 @@ const Hero = () => {
           </text>
         </h1>
       </motion.div>
-      <div className="w-[400px] md:w-[800px] aspect-[1.21] relative">
-        <Image
-          src="/hero.webp"
-          alt="Michael Pfister working on a laptop"
-          layout="fill"
-        />
-      </div>
     </section>
   );
 };
